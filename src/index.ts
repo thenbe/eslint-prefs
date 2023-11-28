@@ -6,6 +6,7 @@ export const configs = {
     rules: {
       'curly': 'off', // if conditions look more clear with curly braces
       'no-useless-return': 'off', // potential footgun when refactoring
+      'node/prefer-global/process': 'off',
       'import/order': 'off', // handled by perfectionist
       'sort-imports': 'off', // handled by perfectionist
       'perfectionist/sort-imports': 'error',
