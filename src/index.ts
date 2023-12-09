@@ -10,6 +10,8 @@ export const configs = {
       'import/order': 'off', // handled by perfectionist
       'sort-imports': 'off', // handled by perfectionist
       'perfectionist/sort-imports': 'error',
+      'perfectionist/sort-named-imports': 'error',
+      'perfectionist/sort-exports': 'error',
     },
   },
   tsconfig: {
