@@ -24,6 +24,7 @@ export const configs = {
     files: ['**/*.svelte'],
     rules: {
       'no-undef-init': 'off', // TODO: re-evaluate for svelte v5
+      'svelte/prefer-style-directive': 'off', // TODO: enable after bug fix: https://github.com/sveltejs/eslint-plugin-svelte/issues/651
     },
   },
 } satisfies Record<string, FlatConfigItem>
