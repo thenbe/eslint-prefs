@@ -24,7 +24,13 @@ export const configs = {
     files: ['**/*.svelte'],
     rules: {
       'no-undef-init': 'off', // TODO: re-evaluate for svelte v5
+      'svelte/first-attribute-linebreak': 'error',
+      'svelte/max-attributes-per-line': 'error',
+      'svelte/no-extra-reactive-curlies': 'error',
+      'svelte/prefer-class-directive': 'error',
       'svelte/prefer-style-directive': 'off', // TODO: enable after bug fix: https://github.com/sveltejs/eslint-plugin-svelte/issues/651
+      'svelte/shorthand-attribute': 'error',
+      'svelte/shorthand-directive': 'error',
     },
   },
 } satisfies Record<string, FlatConfigItem>
