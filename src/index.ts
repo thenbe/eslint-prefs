@@ -24,6 +24,22 @@ export const configs = {
     files: ['**/*.svelte'],
     rules: {
       'no-undef-init': 'off', // TODO: re-evaluate for svelte v5
+      'svelte/block-lang': [
+        'error',
+        {
+          enforceScriptPresent: false,
+          enforceStylePresent: false,
+          script: ['ts'],
+          // style: 'scss',
+        },
+      ],
+      'svelte/no-dom-manipulating': 'error',
+      'svelte/no-inner-declarations': 'error',
+      'svelte/no-store-async': 'error',
+      'svelte/no-target-blank': ['error', { allowReferrer: true }],
+      'svelte/require-stores-init': 'error',
+
+      // stylistic
       'svelte/first-attribute-linebreak': 'error',
       'svelte/max-attributes-per-line': 'error',
       'svelte/no-extra-reactive-curlies': 'error',
