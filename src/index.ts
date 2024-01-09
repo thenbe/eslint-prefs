@@ -51,4 +51,28 @@ export const configs = {
   },
 } satisfies Record<string, FlatConfigItem>
 
+/**
+ * Usage:
+ * ```javascript
+ *  // eslint.config.js
+ *  import { ts_naming_convention } from 'eslint-prefs'
+ *
+ *  export default antfu(
+ *    {
+ *      typescript: {
+ *        overrides: {
+ *          ...ts_naming_convention,
+ *        },
+ *      },
+ *    },
+ *  )
+ * ```
+ */
+export const ts_naming_convention = {
+  'ts/naming-convention': [
+    'warn',
+    { selector: 'variableLike', format: ['snake_case', 'UPPER_CASE', 'PascalCase'], leadingUnderscore: 'allow' },
+  ],
+}
+
 export const all = Object.values(configs)
