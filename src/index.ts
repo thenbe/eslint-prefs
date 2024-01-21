@@ -12,6 +12,19 @@ export const configs = {
       'perfectionist/sort-imports': 'error',
       'perfectionist/sort-named-imports': 'error',
       'perfectionist/sort-exports': 'error',
+      'perfectionist/sort-classes': ['error', { type: 'natural', groups: [
+        'index-signature',
+        'static-property',
+        'private-property',
+        'property',
+        'constructor',
+        'static-method',
+        'private-method',
+        'static-private-method',
+        'method',
+        ['get-method', 'set-method'],
+        'unknown',
+      ] }],
     },
   },
   tsconfig: {
@@ -47,6 +60,11 @@ export const configs = {
       'svelte/prefer-style-directive': 'off', // TODO: enable after bug fix: https://github.com/sveltejs/eslint-plugin-svelte/issues/651
       'svelte/shorthand-attribute': 'error',
       'svelte/shorthand-directive': 'error',
+      'perfectionist/sort-svelte-attributes': ['error', {
+        type: 'natural',
+        order: 'asc',
+        groups: ['multiline', 'unknown', ['shorthand', 'svelte-shorthand']],
+      }],
     },
   },
 } satisfies Record<string, FlatConfigItem>
@@ -70,8 +88,29 @@ export const configs = {
  */
 export const ts_naming_convention = {
   'ts/naming-convention': [
-    'warn',
-    { selector: 'variableLike', format: ['snake_case', 'UPPER_CASE', 'PascalCase'], leadingUnderscore: 'allow' },
+    'error',
+    {
+      selector: 'variableLike',
+      format: ['snake_case', 'UPPER_CASE'],
+      leadingUnderscore: 'allow',
+      filter: { regex: 'Schema$', match: false }, // ignore Zod schemas
+    },
+    { selector: 'typeLike', format: ['PascalCase'] },
+    // Enforce that boolean variables are prefixed with an allowed verb
+    {
+      selector: 'variable',
+      types: ['boolean'],
+      format: null, // don't enforce for this selector
+      prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+      leadingUnderscore: 'allow',
+      filter: { regex: '^(csr|ssr|prerender)$', match: false },
+    },
+    // Enforce that type parameters (generics) are prefixed with T
+    {
+      selector: 'typeParameter',
+      format: ['PascalCase'],
+      prefix: ['T'],
+    },
   ],
 }
 
