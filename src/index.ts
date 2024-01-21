@@ -112,6 +112,6 @@ export const ts_naming_convention = {
       prefix: ['T'],
     },
   ],
-}
+} as const
 
 export const all = Object.values(configs)
