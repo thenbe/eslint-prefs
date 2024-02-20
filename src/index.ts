@@ -1,5 +1,17 @@
 import type { FlatConfigItem } from '@antfu/eslint-config'
 
+/**
+ * Usage:
+ * ```javascript
+ *  // eslint.config.js
+ *  import { configs } from 'eslint-prefs'
+ *
+ *  export default antfu(
+ *    { },
+ *    ...Object.values(configs),
+ *  )
+ * ```
+ */
 export const configs = {
   global: {
     name: 'global-rules',
