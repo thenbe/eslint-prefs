@@ -1,5 +1,5 @@
+import { createRequire } from 'node:module'
 import type { FlatConfigItem } from '@antfu/eslint-config'
-import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 
 /**
  * Usage:
@@ -83,8 +83,7 @@ export const configs = {
   tailwind: {
     files: ['**/*.svelte'],
     plugins: {
-      tailwindcss: tailwindcssPlugin,
-      // tailwindcss: createRequire(import.meta.url)('eslint-plugin-tailwindcss'), // https://stackoverflow.com/a/74370910
+      tailwindcss: createRequire(import.meta.url)('eslint-plugin-tailwindcss'), // https://stackoverflow.com/a/74370910
     },
     rules: {
       'tailwindcss/classnames-order': 'error',
