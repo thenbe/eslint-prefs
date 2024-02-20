@@ -1,4 +1,5 @@
 import type { FlatConfigItem } from '@antfu/eslint-config'
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 
 /**
  * Usage:
@@ -77,6 +78,22 @@ export const configs = {
         order: 'asc',
         groups: ['multiline', 'unknown', ['shorthand', 'svelte-shorthand']],
       }],
+    },
+  },
+  tailwind: {
+    files: ['**/*.svelte'],
+    plugins: {
+      tailwindcss: tailwindcssPlugin,
+      // tailwindcss: createRequire(import.meta.url)('eslint-plugin-tailwindcss'), // https://stackoverflow.com/a/74370910
+    },
+    rules: {
+      'tailwindcss/classnames-order': 'error',
+      'tailwindcss/enforces-negative-arbitrary-values': 'error',
+      'tailwindcss/enforces-shorthand': 'warn',
+      'tailwindcss/migration-from-tailwind-2': 'off',
+      'tailwindcss/no-arbitrary-value': 'off',
+      'tailwindcss/no-custom-classname': 'off',
+      'tailwindcss/no-contradicting-classname': 'error',
     },
   },
 } satisfies Record<string, FlatConfigItem>

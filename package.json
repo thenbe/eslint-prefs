@@ -33,7 +33,13 @@
     "prepare": "simple-git-hooks"
   },
   "peerDependencies": {
-    "eslint": ">=8.0.0"
+    "eslint": ">=8.0.0",
+    "eslint-plugin-tailwindcss": "3.13.1"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-tailwindcss": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.1.0",
