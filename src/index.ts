@@ -1,5 +1,5 @@
 import { createRequire } from 'node:module'
-import type { FlatConfigItem } from '@antfu/eslint-config'
+import type { FlatConfigItem, Rules } from '@antfu/eslint-config'
 
 /**
  * Usage:
@@ -114,7 +114,7 @@ export const configs = {
  *  )
  * ```
  */
-export const ts_naming_convention = {
+export const ts_naming_convention: { 'ts/naming-convention': Rules['ts/naming-convention'] } = {
   'ts/naming-convention': [
     'error',
     {
@@ -140,6 +140,6 @@ export const ts_naming_convention = {
       prefix: ['T'],
     },
   ],
-} as const
+}
 
 export const all = Object.values(configs)
