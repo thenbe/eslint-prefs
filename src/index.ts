@@ -25,11 +25,11 @@ export const configs = {
       'perfectionist/sort-imports': 'error',
       'perfectionist/sort-named-imports': 'error',
       'perfectionist/sort-exports': 'error',
-      'perfectionist/sort-classes': ['error', { type: 'natural', groups: [
+      'perfectionist/sort-classes': ['off', { type: 'natural', groups: [
         'index-signature',
         'static-property',
         'private-property',
-        'property',
+        'property', // Results in awkward code because it does not differentiate between arrow functions and vanilla properties
         'constructor',
         'static-method',
         'private-method',
