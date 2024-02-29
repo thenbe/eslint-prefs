@@ -1,7 +1,7 @@
 {
   "name": "eslint-prefs",
   "type": "module",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "packageManager": "pnpm@8.10.2",
   "description": "NBE's ESLint prefs",
   "author": "Naser Aleisa <aleisa.naser@gmail.com> (https://github.com/thenbe/)",
