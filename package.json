@@ -22,7 +22,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --clean --dts",
+    "build": "tsup src/index.ts --format esm,cjs --clean",
     "stub": "tsup src/index.ts --format esm",
     "dev": "tsup src/index.ts --format esm,cjs --watch & eslint-flat-config-viewer",
     "lint": "pnpm run stub && eslint .",
@@ -33,13 +33,10 @@
     "prepare": "simple-git-hooks"
   },
   "peerDependencies": {
-    "eslint": ">=8.0.0",
-    "eslint-plugin-tailwindcss": "3.13.1"
+    "eslint": ">=8.0.0"
   },
-  "peerDependenciesMeta": {
-    "eslint-plugin-tailwindcss": {
-      "optional": true
-    }
+  "dependencies": {
+    "eslint-plugin-tailwindcss": "3.13.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
