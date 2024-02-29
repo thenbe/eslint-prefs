@@ -101,20 +101,19 @@ export const configs = {
  * Usage:
  * ```javascript
  *  // eslint.config.js
- *  import { ts_naming_convention } from 'eslint-prefs'
+ *  import { typescript_overrides } from 'eslint-prefs'
  *
  *  export default antfu(
  *    {
  *      typescript: {
- *        overrides: {
- *          ...ts_naming_convention,
- *        },
+ *        overrides: typescript_overrides,
  *      },
  *    },
  *  )
  * ```
  */
-export const ts_naming_convention: { 'ts/naming-convention': Rules['ts/naming-convention'] } = {
+export const typescript_overrides = {
+  'ts/method-signature-style': 'error',
   'ts/naming-convention': [
     'error',
     {
@@ -139,7 +138,7 @@ export const ts_naming_convention: { 'ts/naming-convention': Rules['ts/naming-co
       format: ['PascalCase'],
       prefix: ['T'],
     },
-  ],
-}
+  ] as Rules['ts/naming-convention'],
+} satisfies Partial<Rules>
 
 export const all = Object.values(configs)
