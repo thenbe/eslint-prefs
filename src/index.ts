@@ -1,4 +1,6 @@
 import type { FlatConfigItem, Rules } from '@antfu/eslint-config'
+
+// @ts-expect-error untyped lib
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 
 /**
@@ -139,6 +141,6 @@ export const typescript_overrides = {
       prefix: ['T'],
     },
   ] as Rules['ts/naming-convention'],
-} satisfies Partial<Rules>
+} satisfies Partial<Rules> as any
 
 export const all = Object.values(configs)
