@@ -141,6 +141,14 @@ export const typescript_overrides = {
       prefix: ['T'],
     },
   ] as Rules['ts/naming-convention'],
+  'ts/restrict-template-expressions': ['error', {
+    allowAny: false,
+    allowBoolean: true,
+    allowNever: false,
+    allowNullish: false,
+    allowNumber: true,
+    allowRegExp: false,
+  }],
 } satisfies Partial<Rules> as any
 
 export const all = Object.values(configs)
