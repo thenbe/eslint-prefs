@@ -44,7 +44,7 @@ export const configs = {
     },
   },
   tsconfig: {
-    files: ['**/tsconfig.json'],
+    files: ['**/tsconfig.json', '**/tsconfig.*.json'],
     rules: {
       'jsonc/sort-keys': 'off',
     },
