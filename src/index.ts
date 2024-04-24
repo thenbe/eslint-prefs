@@ -40,6 +40,7 @@ export const configs = {
         ['get-method', 'set-method'],
         'unknown',
       ] }],
+      'import/newline-after-import': 'off', // too strict on commented out imports
     },
   },
   tsconfig: {
