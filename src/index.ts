@@ -84,7 +84,7 @@ export const configs = {
     },
   },
   tailwind: {
-    files: ['**/*.svelte'],
+    files: ['**/*.{html,css,svelte,tsx,jsx}'],
     plugins: {
       tailwindcss: tailwindcssPlugin,
     },
