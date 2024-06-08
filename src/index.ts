@@ -1,4 +1,4 @@
-import type { FlatConfigItem, Rules } from '@antfu/eslint-config'
+import type { Rules, TypedFlatConfigItem } from '@antfu/eslint-config'
 
 // @ts-expect-error untyped lib
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
@@ -98,7 +98,7 @@ export const configs = {
       'tailwindcss/no-contradicting-classname': 'error',
     },
   },
-} satisfies Record<string, FlatConfigItem>
+} satisfies Record<string, TypedFlatConfigItem>
 
 /**
  * Usage:
