@@ -41,6 +41,7 @@ export const configs = {
         'unknown',
       ] }],
       'import/newline-after-import': 'off', // too strict on commented out imports
+      'no-unused-private-class-members': 'error', // supersedes tsconfig rule(s)
     },
   },
   tsconfig: {
@@ -91,7 +92,7 @@ export const configs = {
     rules: {
       'tailwindcss/classnames-order': 'error',
       'tailwindcss/enforces-negative-arbitrary-values': 'error',
-      'tailwindcss/enforces-shorthand': 'warn',
+      'tailwindcss/enforces-shorthand': 'off',
       'tailwindcss/migration-from-tailwind-2': 'off',
       'tailwindcss/no-arbitrary-value': 'off',
       'tailwindcss/no-custom-classname': 'off',
