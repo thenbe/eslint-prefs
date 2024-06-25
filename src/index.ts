@@ -118,6 +118,7 @@ export const configs = {
  */
 export const typescript_overrides = {
   'ts/method-signature-style': 'error',
+  'ts/no-misused-promises': ['error', { checksVoidReturn: { attributes: false } }], // Disable useless check for jsx/tsx files. https://github.com/orgs/react-hook-form/discussions/10965#discussioncomment-9199161
   'ts/naming-convention': [
     'error',
     {
